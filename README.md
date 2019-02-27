@@ -8,15 +8,15 @@ Apache Cassandra est un système de gestion de base de données (SGBD) de type N
 Aussi il est Orientée colonnes et Décentralisée.
 Il est fondée initialement par Facebook, mais en 2008, Facebook transmet ce projet à la fondation Apache
 ### Les utilisateurs de Cassandra
-*Twitter l'utilise pour les données statistiques et la géolocalisation.
-*Digg a décidé de réimplémenter entièrement sa gestion de données sous Cassandra.
-*Netflix, l'entreprise de streaming TV préfère renoncer aux avantages du relationnel pour l'extensibilité de Cassandra.
-*Ebay.
-*Instagram.
+* Twitter l'utilise pour les données statistiques et la géolocalisation.
+* Digg a décidé de réimplémenter entièrement sa gestion de données sous Cassandra.
+* Netflix, l'entreprise de streaming TV préfère renoncer aux avantages du relationnel pour l'extensibilité de Cassandra.
+* Ebay.
+* Instagram.
  
 ## Pourquoi Cassandra?
-•Ne nécessite pas un système de fichiers distribué comme HBase.
-•Permet de stocker une large quantité de données.
-•Très rapide pour manipuler un volume important de données
-•Permet la scalabilité horizontale.
-•Assure la disponibilité et la tolérance aux pannes.
+* Ne nécessite pas un système de fichiers distribué comme HBase.
+* Permet de stocker une large quantité de données.
+* Très rapide pour manipuler un volume important de données
+* Permet la scalabilité horizontale.
+* Assure la disponibilité et la tolérance aux pannes.
