@@ -39,7 +39,7 @@ Ceci est la théorie. En pratique, on se rend compte que le paramètre P est plu
 
 ## Architecture
 L'architecture Cassandra s'inspire énormément du papier de recherche Big Table de Google, ainsi que de l'architecture Dynamo d'Amazon. Le moteur de stockage de Cassandra dérive directement de Big Table alors que sa couche de distribution de données s'inspire de l'architecture de Dynamo.
-[image](Cassandra_Architecture.png)
+[Image](Cassandra_Architecture.png)
 Sur le schéma ci-dessus, on distingue la présence de 3 couches métiers :
 *    API, responsable de recevoir les requêtes venant des clients sous format Thrift (protocole RPC) ou dans le nouveau format binaire CQL3
 *    Dynamo, responsable de la distribution des données entre différents noeuds et du protocole peer-to-peer
