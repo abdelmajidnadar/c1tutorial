@@ -44,4 +44,3 @@ Sur le schéma ci-dessus, on distingue la présence de 3 couches métiers :
 *    API, responsable de recevoir les requêtes venant des clients sous format Thrift (protocole RPC) ou dans le nouveau format binaire CQL3
 *    Dynamo, responsable de la distribution des données entre différents noeuds et du protocole peer-to-peer
 *    Base de données, responsable de la persistance des données sur disques
-Désormais et jusqu'à la fin de cette série d'articles, on s'intéressera uniquement à la couche base de données, les autres couches techniques feront l'objet d'articles ultérieurs.
