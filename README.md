@@ -70,7 +70,7 @@ Tolérance aux pannes => Réplication des données sur les noeuds de cluster:
 * Famille de colonnes
 * Keyspace
 
-# Colonne
+### Colonne
 * La plus petite unité de modèle
 * constituée d’un nom, d’une valeur et d’un timestamp
 * Le timestamp  la valeur la plus récente
@@ -79,20 +79,84 @@ Tolérance aux pannes => Réplication des données sur les noeuds de cluster:
 
 [Image](colonne.bmp)
 
-# Ligne
+### Ligne
 * Un ensemble de colonnes
 * Peut contenir jusqu'à deux milliards de colonnes
 * Possède une clé qui peut atteindre aussi 64 Koctets
 
 [Image](lignes.bmp)
 
-# Famille de colonnes
+### Famille de colonnes
 * Un ensemble de lignes
 * Correspond à peu près à une table dans une base de données ordinaire.
 
 [Image](familledecolonnes.bmp)
 
-# Keyspace 
+### Keyspace 
 c'est l'équivalent d'une database dans le monde des bases de données relationnelles. À noter qu'il est possible d'avoir plusieurs « Keyspaces » sur un même serveur.
 
 [Image](keyspace.bmp)
+
+### Cqlsh Commands
+* Cqlsh documented shell commands:
+    * HELP - Displays help topics for all cqlsh commands.
+    * CAPTURE - Captures the output of a command and adds it to a file.
+    * CONSISTENCY - Shows the current consistency level, or sets a new consistency level.
+    * COPY - Copies data to and from Cassandra.
+    * DESCRIBE - Describes the current cluster of Cassandra and its objects.
+    * EXPAND - Expands the output of a query vertically.
+    * EXIT - Using this command, you can terminate cqlsh.
+    * PAGING - Enables or disables query paging.
+    * SHOW - Displays the details of current cqlsh session such as Cassandra version, host, or data type assumptions.
+    * SOURCE - Executes a file that contains CQL statements.
+    * TRACING - Enables or disables request tracing.
+* CQL Data Definition Commands
+    * CREATE KEYSPACE - Creates a KeySpace in Cassandra.
+    * USE - Connects to a created KeySpace.
+    * ALTER KEYSPACE - Changes the properties of a KeySpace.
+    * DROP KEYSPACE - Removes a KeySpace
+    * CREATE TABLE - Creates a table in a KeySpace.
+    * ALTER TABLE - Modifies the column properties of a table.
+    * DROP TABLE - Removes a table.
+    * TRUNCATE - Removes all the data from a table.
+    * CREATE INDEX - Defines a new index on a single column of a table.
+    * DROP INDEX - Deletes a named index.
+* CQL Data Manipulation Commands
+    * INSERT - Adds columns for a row in a table.
+    * UPDATE - Updates a column of a row.
+    * DELETE - Deletes data from a table.
+    * BATCH - Executes multiple DML statements at once.
+* CQL Clauses
+    * SELECT - This clause reads data from a table
+    * WHERE - The where clause is used along with select to read a specific data.
+    * ORDERBY - The orderby clause is used along with select to read a specific data in a specific order.
+
+## Installation
+Etapes:
+* Oracle Java SE Runtime Environment (JRE):
+*  Rendre le JRE package disponible 
+$ sudo add-apt-repository ppa:webupd8team/java 
+*  Mise à jour par la commande suivante:
+ $ sudo apt-get update 
+*  Installer JRE avec cette commande:
+ $ sudo apt-get install oracle-java8-set-default 
+*  Une vérification pour savoir que tout est correcte:
+ $ java –version 
+*  Vous devez recevoir un message pareil :
+ java version "1.8.0_60" Java(TM) SE Runtime Environment (build 1.8.0_60-b27) Java HotSpot(TM) 64-Bit Server VM (build 25.60-b23, mixed mode)
+* Installer Cassandra
+*  Rendre disponible le package Cassandra $ echo "deb http://www.apache.org/dist/cassandra/debian 39x main" | sudo tee -a /etc/apt/sources.list.d/cassandra.sources.list
+*  Préciser la source $ echo "deb-src http://www.apache.org/dist/cassandra/debian 39x main" | sudo tee -a /etc/apt/sources.list.d/cassandra.sources.list
+*  Ajouter 3 clés publiques :
+*     La première, à l’aide de ces 2 commandes : $ gpg --keyserver pgp.mit.edu --recv-keys F758CE318D77295D Puis, $ gpg --export --armor F758CE318D77295D | sudo apt-key add – 
+*     La seconde, à l’aide de ces 2 commandes : $ gpg --keyserver pgp.mit.edu --recv-keys 2B5C1B00 Puis, $ gpg --export --armor 2B5C1B00 | sudo apt-key add – 
+*     La troisième, à l’aide de ces 2 commandes: $ gpg --keyserver pgp.mit.edu --recv-keys 0353B12C Puis, $ gpg --export --armor 0353B12C | sudo apt-key add –
+*     Mettre à jour package avant installation: $ sudo apt-get update 
+*     Installer Cassandra $ sudo apt-get install Cassandra
+
+Pour savoir le statut de Cassandra, si tout va bien et Cassandra est disponible on utilise cette commande:
+ $ sudo service cassandra status
+- Si Cassandra est disponible on verra le message suivant :
+- Pour démarrer Cassandra on utilise cette commande : $ sudo service Cassandra start
+- Pour l’arrêter : $ sudo service Cassandra stop 
+- Pour manipuler les données et utiliser le langage CQL on exécute d’abord la commande suivante: $ cqlsh
