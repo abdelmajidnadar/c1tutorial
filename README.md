@@ -157,6 +157,7 @@ $ sudo add-apt-repository ppa:webupd8team/java
 Pour savoir le statut de Cassandra, si tout va bien et Cassandra est disponible on utilise cette commande:
  $ sudo service cassandra status
 - Si Cassandra est disponible on verra le message suivant :
+[Image](resultat.bmp)
 - Pour démarrer Cassandra on utilise cette commande : $ sudo service Cassandra start
 - Pour l’arrêter : $ sudo service Cassandra stop 
 - Pour manipuler les données et utiliser le langage CQL on exécute d’abord la commande suivante: $ cqlsh
