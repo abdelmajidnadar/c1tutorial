@@ -44,3 +44,55 @@ Sur le schéma ci-dessus, on distingue la présence de 3 couches métiers :
 *    API, responsable de recevoir les requêtes venant des clients sous format Thrift (protocole RPC) ou dans le nouveau format binaire CQL3
 *    Dynamo, responsable de la distribution des données entre différents noeuds et du protocole peer-to-peer
 *    Base de données, responsable de la persistance des données sur disques
+* Distribuée sur plusieurs serveurs appelés noeuds.
+* Les noeuds sont égaux : pas de maître/esclave.
+* communiquent ensemble pour la gestion des données.
+* Le regroupement de noeuds est appelé un cluster.
+
+## Distribution de Données
+Dans un cluster, les partitions dans une table sont réparties entre plusieurs noeuds. Il y a 2 façons de répartir les données :
+1) De manière ordonnée, chaque noeud prend en charge une plage de clé de partition triée par ordre croissant.[Image](maniere ordonn.bmp)
+2) De manière aléatoire, chaque noeud prend en charge une plage de la clé de partition distribuée uniformément.[Image](New Picture (2).bmp)
+Clé de partition = K
+Fonction de hachage (ex: MD5): F()
+F(K) = token
+MD5  [0- (2127 -1)]
+token ϵ [0- (2127 -1)]
+
+## Réplication
+Tolérance aux pannes => Réplication des données sur les noeuds de cluster:
+* le nombre réplication (= nombre de noeuds) => facteur de réplication (RF)
+* RF =1 une seule réplication, RF= 2 => 2 réplications
+
+## Structure des données
+* Colonnes
+* Lignes
+* Famille de colonnes
+* Keyspace
+
+# Colonne
+* La plus petite unité de modèle
+* constituée d’un nom, d’une valeur et d’un timestamp
+* Le timestamp  la valeur la plus récente
+* Le nom peut atteindre 64 Koctets
+* la valeur 2 Goctets
+
+[Image](colonne.bmp)
+
+# Ligne
+* Un ensemble de colonnes
+* Peut contenir jusqu'à deux milliards de colonnes
+* Possède une clé qui peut atteindre aussi 64 Koctets
+
+[Image](lignes.bmp)
+
+# Famille de colonnes
+* Un ensemble de lignes
+* Correspond à peu près à une table dans une base de données ordinaire.
+
+[Image](familledecolonnes.bmp)
+
+# Keyspace 
+c'est l'équivalent d'une database dans le monde des bases de données relationnelles. À noter qu'il est possible d'avoir plusieurs « Keyspaces » sur un même serveur.
+
+[Image](keyspace.bmp)
