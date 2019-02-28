@@ -149,25 +149,25 @@ $ sudo add-apt-repository ppa:webupd8team/java
 *  Préciser la source $ echo "deb-src http://www.apache.org/dist/cassandra/debian 39x main" | sudo tee -a /etc/apt/sources.list.d/cassandra.sources.list
 *  Ajouter 3 clés publiques :
 
-       *     La première, à l’aide de ces 2 commandes :
+       La première, à l’aide de ces 2 commandes :
 
-         *  $ gpg --keyserver pgp.mit.edu --recv-keys 
+         $ gpg --keyserver pgp.mit.edu --recv-keys 
          F758CE318D77295D 
 
-         *  $ gpg --export --armor F758CE318D77295D | sudo apt-key add – 
+         $ gpg --export --armor F758CE318D77295D | sudo apt-key add – 
 
-       * La seconde, à l’aide de ces 2 commandes : 
+       La seconde, à l’aide de ces 2 commandes : 
 
-         * $ gpg --keyserver pgp.mit.edu --recv-keys 2B5C1B00  
+         $ gpg --keyserver pgp.mit.edu --recv-keys 2B5C1B00  
 
-         * $ gpg --export --armor 2B5C1B00 | sudo apt-key add – 
+         $ gpg --export --armor 2B5C1B00 | sudo apt-key add – 
 
-       * La troisième, à l’aide de ces 2 commandes:
+       La troisième, à l’aide de ces 2 commandes:
 
-         * $ gpg --keyserver pgp.mit.edu --recv-keys 0353B12C
+         $ gpg --keyserver pgp.mit.edu --recv-keys 0353B12C
 
-         * $ gpg --export --armor 0353B12C | sudo apt-key add –
-         
+         $ gpg --export --armor 0353B12C | sudo apt-key add –
+
 *     Mettre à jour package avant installation: $ sudo apt-get update 
 *     Installer Cassandra $ sudo apt-get install Cassandra
 
