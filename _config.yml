@@ -1,1 +1,13 @@
-theme: jekyll-theme-cayman
+remote_theme: ISSAE/architect
+
+name: nouveau nom
+
+author: Abdelmajid Nadar
+
+author_email: abdelmaji.nadar@isae.edu.lb
+
+title: Cassandra tutoriel
+google_analytics: UA-29708002-2
+
+plugins:
+- jekyll-sitemap
