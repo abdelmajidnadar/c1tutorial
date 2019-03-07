@@ -39,7 +39,7 @@ Ceci est la théorie. En pratique, on se rend compte que le paramètre P est plu
 
 ## Architecture
 L'architecture Cassandra s'inspire énormément du papier de recherche Big Table de Google, ainsi que de l'architecture Dynamo d'Amazon. Le moteur de stockage de Cassandra dérive directement de Big Table alors que sa couche de distribution de données s'inspire de l'architecture de Dynamo.
-[Image](Cassandra_Architecture.png)
+<img src="Cassandra_Architecture.png" height="80" width="101" />
 Sur le schéma ci-dessus, on distingue la présence de 3 couches métiers :
 *    API, responsable de recevoir les requêtes venant des clients sous format Thrift (protocole RPC) ou dans le nouveau format binaire CQL3
 *    Dynamo, responsable de la distribution des données entre différents noeuds et du protocole peer-to-peer
@@ -77,25 +77,25 @@ Tolérance aux pannes => Réplication des données sur les noeuds de cluster:
 * Le nom peut atteindre 64 Koctets
 * la valeur 2 Goctets
 
-[Image](colonne.bmp)
+<img src="colonne.bmp" height="80" width="101" />
 
 ### Ligne
 * Un ensemble de colonnes
 * Peut contenir jusqu'à deux milliards de colonnes
 * Possède une clé qui peut atteindre aussi 64 Koctets
 
-[Image](lignes.bmp)
+<img src="lignes.bmp" height="80" width="101" />
 
 ### Famille de colonnes
 * Un ensemble de lignes
 * Correspond à peu près à une table dans une base de données ordinaire.
 
-[Image](familledecolonnes.bmp)
+<img src="familledecolonnes.bmp" height="80" width="101" />
 
 ### Keyspace 
 c'est l'équivalent d'une database dans le monde des bases de données relationnelles. À noter qu'il est possible d'avoir plusieurs « Keyspaces » sur un même serveur.
 
-[Image](keyspace.bmp)
+<img src="keyspace.bmp" height="80" width="101" />
 
 ### Cqlsh Commands
 * Cqlsh documented shell commands:
@@ -174,7 +174,7 @@ $ sudo add-apt-repository ppa:webupd8team/java
 Pour savoir le statut de Cassandra, si tout va bien et Cassandra est disponible on utilise cette commande:
  $ sudo service cassandra status
 - Si Cassandra est disponible on verra le message suivant :
-[Image](resultat.bmp)
+<img src="resultat.bmp" height="80" width="101" />
 - Pour démarrer Cassandra on utilise cette commande : $ sudo service Cassandra start
 - Pour l’arrêter : $ sudo service Cassandra stop 
 - Pour manipuler les données et utiliser le langage CQL on exécute d’abord la commande suivante: $ cqlsh
