@@ -152,35 +152,16 @@ $ sudo add-apt-repository ppa:webupd8team/java
  $ java –version 
 *  Vous devez recevoir un message pareil :
  java version "1.8.0_60" Java(TM) SE Runtime Environment (build 1.8.0_60-b27) Java HotSpot(TM) 64-Bit Server VM (build 25.60-b23, mixed mode)
-* Installer Cassandra
-*  Rendre disponible le package Cassandra 
-    
-       $ echo "deb http://www.apache.org/dist/cassandra/debian 39x main" | sudo tee -a /etc/apt/sources.list.d/cassandra.sources.list
-       
-*  Préciser la source 
+* Installer Cassandra sur Ubuntu 18.04
+
+*  Import de la repertoire GPG par la commande "wget": 
    
-       $ echo "deb-src http://www.apache.org/dist/cassandra/debian 39x main" | sudo tee -a /etc/apt/sources.list.d/cassandra.sources.list
+       $ wget -q -O - https://www.apache.org/dist/cassandra/KEYS | sudo apt-key add -
 
-*  Ajouter 3 clés publiques :
+*  Import de la repertoire Cassandra par "issuing": 
+   
+       $ sudo sh -c 'echo "deb http://www.apache.org/dist/cassandra/debian 311x main" > /etc/apt/sources.list.d/cassandra.list'
 
-       La première, à l’aide de ces 2 commandes :
-
-         $ gpg --keyserver pgp.mit.edu --recv-keys 
-         F758CE318D77295D 
-
-         $ gpg --export --armor F758CE318D77295D | sudo apt-key add – 
-
-       La seconde, à l’aide de ces 2 commandes : 
-
-         $ gpg --keyserver pgp.mit.edu --recv-keys 2B5C1B00  
-
-         $ gpg --export --armor 2B5C1B00 | sudo apt-key add – 
-
-       La troisième, à l’aide de ces 2 commandes:
-
-         $ gpg --keyserver pgp.mit.edu --recv-keys 0353B12C
-
-         $ gpg --export --armor 0353B12C | sudo apt-key add –
 
 *     Mettre à jour package avant installation: $ sudo apt-get update 
 *     Installer Cassandra $ sudo apt-get install Cassandra
@@ -194,3 +175,4 @@ Pour savoir le statut de Cassandra, si tout va bien et Cassandra est disponible 
 - Pour démarrer Cassandra on utilise cette commande : $ sudo service Cassandra start
 - Pour l’arrêter : $ sudo service Cassandra stop 
 - Pour manipuler les données et utiliser le langage CQL on exécute d’abord la commande suivante: $ cqlsh
+- Un example pour tester cassandra cql: <link rel="canonical" href="https://issae.github.io/nfp121.tpInjection/" />
