@@ -175,4 +175,4 @@ Pour savoir le statut de Cassandra, si tout va bien et Cassandra est disponible 
 - Pour démarrer Cassandra on utilise cette commande : $ sudo service Cassandra start
 - Pour l’arrêter : $ sudo service Cassandra stop 
 - Pour manipuler les données et utiliser le langage CQL on exécute d’abord la commande suivante: $ cqlsh
-- Un example pour tester cassandra cql: <link rel="canonical" href="https://github.com/abdelmajidnadar/c1tutorial/blob/master/Example%20cassandra.txt" />
+- Un example pour tester cassandra cql: <a href="https://github.com/abdelmajidnadar/c1tutorial/blob/master/Example%20cassandra.txt" />
