@@ -67,15 +67,19 @@ Dans un cluster, les partitions dans une table sont réparties entre plusieurs n
 <img src="New Picture (2).bmp" height="200" width="400"  />
 
 Clé de partition = K
+
 Fonction de hachage (ex: MD5): F()
+
 F(K) = token
-MD5  [0- (2127 -1)]
+
+MD5 --> [0- (2127 -1)]
+
 token ϵ [0- (2127 -1)]
 
 ## Réplication
 Tolérance aux pannes => Réplication des données sur les noeuds de cluster:
 * le nombre réplication (= nombre de noeuds) => facteur de réplication (RF)
-* RF =1 une seule réplication, RF= 2 => 2 réplications
+* RF =1 => une seule réplication, RF= 2 => 2 réplications
 
 ## Structure des données
 * Colonnes
@@ -144,7 +148,7 @@ c'est l'équivalent d'une database dans le monde des bases de données relationn
     * WHERE - The where clause is used along with select to read a specific data.
     * ORDERBY - The orderby clause is used along with select to read a specific data in a specific order.
 
-## Installation
+## Installation sur ubuntu 18.04
 Etapes:
 * Oracle Java SE Runtime Environment (JRE):
 *  Rendre le JRE package disponible 
