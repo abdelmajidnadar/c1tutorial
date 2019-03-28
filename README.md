@@ -25,8 +25,9 @@ Un comparatif de performances fourni par Apache:
     Ecriture: MySQL: 300 ms. Cassandra: 0,12 ms.
 
     Lecture: MySQL: 350 ms. Cassandra: 15 ms.
-    Différences de conception:
     
+    Différences de conception:
+
     Nombre de colonnes: MySQL: 4096. Cassandra: 2 milliards.
 
 ## Théorème CAP
