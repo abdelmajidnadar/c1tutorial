@@ -81,7 +81,7 @@ Tolérance aux pannes => Réplication des données sur les noeuds de cluster:
 ### Colonne
 * La plus petite unité de modèle
 * constituée d’un nom, d’une valeur et d’un timestamp
-* Le timestamp  la valeur la plus récente
+* Le timestamp la valeur la plus récente
 * Le nom peut atteindre 64 Koctets
 * la valeur 2 Goctets
 
