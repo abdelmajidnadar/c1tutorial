@@ -31,6 +31,7 @@ Dans le monde des bases de données NoSQL, on entend souvent parler du Théorèm
 *    La cohérence ( C pour Consistency)
 *    La disponibilité ( A pour Availability)
 *    La tolérance aux pannes et aux coupures réseaux ( P pour Partition-tolerance)
+
 Le théorème postule que pour toute base de données distribuée, on ne peut choisir que 2 de ces 3 paramètres, jamais les 3 en même temps. En théorie, on peut donc choisir les couples suivants :
 a. Cohérence et disponibilité ( CA ) donc non résistante aux pannes ( P )
 b. Cohérence et tolérance aux pannes ( CP ) donc non disponible à 100% ( A )
