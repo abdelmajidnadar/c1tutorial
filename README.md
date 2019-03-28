@@ -21,9 +21,12 @@ Il est fondée initialement par Facebook, mais en 2008, Facebook transmet ce pro
 * Permet la scalabilité horizontale.
 * Assure la disponibilité et la tolérance aux pannes.
 Un comparatif de performances fourni par Apache:
+
     Ecriture: MySQL: 300 ms. Cassandra: 0,12 ms.
+
     Lecture: MySQL: 350 ms. Cassandra: 15 ms.
     Différences de conception:
+
       Nombre de colonnes: MySQL: 4096. Cassandra: 2 milliards.
 
 ## Théorème CAP
@@ -54,6 +57,7 @@ Sur le schéma ci-dessus, on distingue la présence de 3 couches métiers :
 
 ## Distribution de Données
 Dans un cluster, les partitions dans une table sont réparties entre plusieurs noeuds. Il y a 2 façons de répartir les données :
+
 1) De manière ordonnée, chaque noeud prend en charge une plage de clé de partition triée par ordre croissant.
 
 <img src="maniere ordonn.bmp" height="200" width="400"  />
