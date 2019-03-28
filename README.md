@@ -26,8 +26,8 @@ Un comparatif de performances fourni par Apache:
 
     Lecture: MySQL: 350 ms. Cassandra: 15 ms.
     Différences de conception:
-
-      Nombre de colonnes: MySQL: 4096. Cassandra: 2 milliards.
+    
+    Nombre de colonnes: MySQL: 4096. Cassandra: 2 milliards.
 
 ## Théorème CAP
 Dans le monde des bases de données NoSQL, on entend souvent parler du Théorème CAP. Ce théorème établit 3 paramètres sur lesquels on peut jouer pour configurer une base de données distribuée :
@@ -36,9 +36,13 @@ Dans le monde des bases de données NoSQL, on entend souvent parler du Théorèm
 *    La tolérance aux pannes et aux coupures réseaux ( P pour Partition-tolerance)
 
 Le théorème postule que pour toute base de données distribuée, on ne peut choisir que 2 de ces 3 paramètres, jamais les 3 en même temps. En théorie, on peut donc choisir les couples suivants :
+
 a. Cohérence et disponibilité ( CA ) donc non résistante aux pannes ( P )
+
 b. Cohérence et tolérance aux pannes ( CP ) donc non disponible à 100% ( A )
+
 c. Disponibilité et tolérance aux pannes ( AP ) donc non cohérente à 100% ( C )
+
 Ceci est la théorie. En pratique, on se rend compte que le paramètre P est plus ou moins imposé. En effet, les coupures réseaux cela arrive, c'est inévitable, même si on s'appelle Google... Du coup, le choix se résume en fin de compte à CP ou AP. Cassandra fait clairement le choix de AP pour une tolérance aux pannes et une disponibilité absolue. En contrepartie, Cassandra sacrifie la cohérence absolue (au sens ACID du terme) contre une cohérence finale, c'est à dire une cohérence forte obtenue après une convergence des données.
 
 ## Architecture
